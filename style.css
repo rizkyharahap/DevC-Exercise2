@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: tahoma;
+}
+
+.container {
+  margin:10%;
+  width: 40%;
+}
+.rows {
+    display: grid;
+    grid-template-columns: auto 40%;
+}
+.grid {
+  display: grid;
+  grid-template-rows: 2 auto;
+  grid-template-columns: repeat(2,auto);
+}
+
+.cols {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  height: 3em;
+  padding: 0.2em 0.5em;
+  outline: none;
+  font-size: 18px;
+  margin: 0.2em 0;
+}
+.input__number {
+  width: 10.75em;
+}
+.input__operator {
+  width: 2em;
+}
+.operation__button {
+  width: 10em;
+  margin-right: 0.5em;
+}
+.calculate__button {
+  height: 6.45em;
+  width: 3em;
+}
+#hasil {
+  color: rgb(10, 230, 65);
+  font-size: 2em;
+}
+@media only screen and (max-width: 522px) {
+
+  .operation__button {
+    width: 5em;
+    margin-right: 0.5em;
+  }
+}

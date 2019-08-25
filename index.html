@@ -1,11 +1,88 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exercise 2</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Exercise 2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <div class="container">
+      <h1>Kalkulator</h1>
+      <input class="input__number" type="text" name="angka1" id="angka1" placeholder="angka pertama">
+      <input class="input__operator"  type="text" name="operator" id="operator" placeholder="" >
+      <input class="input__number"  type="text" name="angka2" id="angka2" placeholder="angka kedua">
+      <i>=</i>
+      <b id="hasil"></b>
+
+      <div class="rows">
+        <div class="cols">
+          <div class="grid">
+              <input class="operation__button" type="button" value="+" id="tambah">
+              <input class="operation__button" type="button" value="-" id="kurang">
+              <input class="operation__button" type="button" value="x" id="kali">
+              <input class="operation__button" type="button" value="/" id="bagi">
+          </div>
+        </div>
+          <div class="cols">
+            <input class="calculate__button" type="button" value="=" id="submit">
+          </div>
+        </div>
+      </div>
+
+
 </body>
+<script>
+    var angka1 = document.getElementById("angka1");
+    var angka2 = document.getElementById('angka2');
+    var operator = document.getElementById('operator');
+    var total;
+    var tambah = document.getElementById('tambah');
+    var kurang = document.getElementById('kurang');
+    var bagi = document.getElementById('bagi');
+    var kali = document.getElementById('kali');
+    var calculate = document.getElementById('submit');
+
+    tambah.onclick = function() {
+      operator.value = '+';
+    }
+    kurang.onclick = function() {
+      operator.value = '-';
+    }
+    bagi.onclick = function() {
+      operator.value = '/';
+    }
+    kali.onclick = function() {
+      operator.value = '*';
+    }
+
+    calculate.onclick = function calculate() {
+      var setAngka1 = parseInt(angka1.value);
+      var setAngka2 = parseInt(angka2.value);
+      var setOperator = operator.value;
+
+      if (setAngka1 == null) {
+        total = "Masukan Angka pertama";
+      } else if (setAngka2 == null) {
+          total = "Masukan Angka kedua"
+      } else if(setOperator == '+'){
+          total = setAngka1 + setAngka2
+      } else if(setOperator == '-'){
+          total = setAngka1 - setAngka2
+      } else if(setOperator == '*'){
+          total = setAngka1 * setAngka2
+      } else if(setOperator == '/'){
+          total = setAngka1 / setAngka2
+      } else if(setOperator == '%'){
+          total = setAngka1 % setAngka2
+      } else {
+          total = "Operator tidak diketahui"
+      }
+      console.log(setAngka1, operator.value, setAngka2);
+      document.getElementById('hasil').textContent = total;
+    }
+
+</script>
 </html>
